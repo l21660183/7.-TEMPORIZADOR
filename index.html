@@ -1,0 +1,58 @@
+<!-- ANGIE XIMENA 0LVERA ALVAREZ-->
+<!-- ACTIVIDAD 7 CREAR UN TEMPORIZADOR QUE CUENTE HACIA ATRAS DE 50 USANDO SETTIMEOUT Y SETINTERVAL-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #timer {
+            font-size: 48px;
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temporizador: <span id="timer">50</span></h1>
+
+    <script>
+        let count = 50;
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            count--;
+            timerElement.textContent = count;
+
+            // Cuando llega a 0, detiene el temporizador
+            if (count <= 0) {
+                clearInterval(countdown);
+                alert('¡Tiempo finalizado!');
+            }
+        }, 1000); // 1000 ms = 1 segundo
+    </script>
+</body>
+</html>
